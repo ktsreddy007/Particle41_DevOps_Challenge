@@ -1,0 +1,13 @@
+bin/
+obj/
+*.md
+*.git
+*.gitignore
+Dockerfile
+.dockerignore
+.vscode/
+.idea/
+.vs/
+*.exe
+*.dll
+*.pdb

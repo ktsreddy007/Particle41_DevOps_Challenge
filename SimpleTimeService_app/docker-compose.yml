@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  simpletimeservice:
+    image: simpletimeservice   # Use your image name here
+    ports:
+      - "5000:5000"           # Always map container's port 5000 to host's port 5000
+    restart: unless-stopped    # Restart the container if it stops
