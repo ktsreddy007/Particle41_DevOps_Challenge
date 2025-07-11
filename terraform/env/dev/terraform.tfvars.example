@@ -1,0 +1,20 @@
+# Azure Resource Group name and location
+resource_group_name     = "REPLACE_ME_RG_NAME"
+resource_group_location = "South India"
+location                = "South India"
+
+# Virtual Network
+vnet_name     = "REPLACE_ME_VNET_NAME"
+address_space = ["10.0.0.0/16"]
+
+# Public Subnets
+public_subnets = [
+  { name = "public-subnet-1", address_prefix = "10.0.1.0/24" },
+  { name = "public-subnet-2", address_prefix = "10.0.2.0/24" }
+]
+
+# Private Subnets
+private_subnets = [
+  { name = "private-subnet-1", address_prefix = "10.0.3.0/24" },
+  { name = "private-subnet-2", address_prefix = "10.0.4.0/24" }
+]
