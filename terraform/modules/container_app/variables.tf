@@ -7,13 +7,13 @@ variable "location" {
   type = string
 }
 
-variable "resource_group_name" {
-  type = string
-}
-
 variable "subnet_id" {
   type        = string
   description = "Private subnet for VNet integration"
+}
+
+variable "resource_group_name" {
+  type = string
 }
 
 variable "container_image" {
@@ -23,3 +23,6 @@ variable "container_image" {
 variable "container_port" {
   type = number
 }
+
+
+

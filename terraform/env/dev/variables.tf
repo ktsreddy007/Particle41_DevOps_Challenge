@@ -35,9 +35,12 @@ variable "private_subnets" {
   }))
 }
 
-
-
-
-
-//variable "container_image" {}
-//variable "container_port" {}
+variable "prefix" {
+  type = string
+}
+variable "container_image" {
+  type = string
+}
+variable "container_port" {
+  type = number
+}

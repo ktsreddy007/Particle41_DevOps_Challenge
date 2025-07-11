@@ -18,3 +18,4 @@ private_subnets = [
   { name = "private-subnet-1", address_prefix = "10.0.3.0/24" },
   { name = "private-subnet-2", address_prefix = "10.0.4.0/24" }
 ]
+

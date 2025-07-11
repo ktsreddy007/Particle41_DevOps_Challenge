@@ -3,7 +3,10 @@ output "vnet_id" {
 }
 
 output "private_subnet_ids" {
-  value = [for subnet in azurerm_subnet.private : subnet.id]
+  value = {
+    for name, subnet in azurerm_subnet.private :
+    name => subnet.id
+  }
 }
 
 output "public_subnet_ids" {

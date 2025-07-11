@@ -22,6 +22,6 @@ output "public_subnet_ids" {
   value = module.network.public_subnet_ids
 }
 
-/*output "container_app_url" {
+output "container_app_url" {
   value = module.container_app.container_app_url
-}*/
+}
