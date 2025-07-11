@@ -2,27 +2,37 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "main" {
+module "resource_group" {
+  source   = "../../modules/resource_group"
   name     = var.resource_group_name
-  location = var.location
+  location = var.resource_group_location
 }
 
 module "network" {
   source              = "../../modules/network"
-  location            = var.location
-  resource_group_name = var.resource_group_name
+  resource_group_name = module.resource_group.name
+  location            = module.resource_group.location
+
+  vnet_name           = "tejavnet"
+  address_space       = ["10.0.0.0/16"]
+
+  public_subnets = [
+    { name = "public-subnet-1", address_prefix = "10.0.1.0/24" },
+    { name = "public-subnet-2", address_prefix = "10.0.2.0/24" }
+  ]
+
+  private_subnets = [
+    { name = "private-subnet-1", address_prefix = "10.0.3.0/24" },
+    { name = "private-subnet-2", address_prefix = "10.0.4.0/24" }
+  ]
 }
 
-module "container_app" {
+/*module "container_app" {
   source              = "../../modules/container_app"
-  prefix              = var.prefix
-  location            = var.location
-  resource_group_name = var.resource_group_name
+  prefix              = "teja"
+  location            = module.resource_group.location
+  resource_group_name = module.resource_group.name
   subnet_id           = module.network.private_subnet_ids[0]
-  container_image     = var.container_image
-  container_port      = var.container_port
-}
-
-output "container_app_url" {
-  value = module.container_app.container_app_url
-}
+  container_image     = "ktsreddy/teja_particle41_devops-challenge:v1.0"
+  container_port      = 5000
+}*/

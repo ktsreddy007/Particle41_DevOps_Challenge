@@ -1,10 +1,11 @@
-output "private_subnet_ids" {
-  value = [
-    module.vnet.subnets["private-subnet-0"].id,
-    module.vnet.subnets["private-subnet-1"].id
-  ]
+output "vnet_id" {
+  value = azurerm_virtual_network.this.id
 }
 
-output "vnet_id" {
-  value = module.vnet.vnet_id
+output "private_subnet_ids" {
+  value = [for subnet in azurerm_subnet.private : subnet.id]
+}
+
+output "public_subnet_ids" {
+  value = [for subnet in azurerm_subnet.public : subnet.id]
 }

@@ -1,34 +1,24 @@
-module "vnet" {
-  source  = "Azure/vnet/azurerm"
-  version = "4.1.0"
-
-  resource_group_name = var.resource_group_name
+resource "azurerm_virtual_network" "this" {
+  name                = var.vnet_name
+  address_space       = var.address_space
   location            = var.location
-  address_space       = ["10.0.0.0/16"]
+  resource_group_name = var.resource_group_name
+}
 
-  subnet_prefixes = [
-    "10.0.0.0/24",
-    "10.0.0.16/24",
-    "10.0.1.0/24",
-    "10.0.1.16/24"
-  ]
+resource "azurerm_subnet" "public" {
+  for_each = { for subnet in var.public_subnets : subnet.name => subnet }
 
-  subnet_names = [
-    "public-subnet-0",
-    "public-subnet-1",
-    "private-subnet-0",
-    "private-subnet-1"
-  ]
+  name                 = each.value.name
+  resource_group_name  = var.resource_group_name
+  virtual_network_name = azurerm_virtual_network.this.name
+  address_prefixes     = [each.value.address_prefix]
+}
 
-  subnet_delegation = {
-    "private-subnet-0" = [
-      {
-        name = "delegation"
-        service_delegation = {
-          name = "Microsoft.App/managedEnvironments"
-          actions = ["Microsoft.Network/virtualNetworks/subnets/action"]
-        }
-      }
-    ]
-  }
+resource "azurerm_subnet" "private" {
+  for_each = { for subnet in var.private_subnets : subnet.name => subnet }
+
+  name                 = each.value.name
+  resource_group_name  = var.resource_group_name
+  virtual_network_name = azurerm_virtual_network.this.name
+  address_prefixes     = [each.value.address_prefix]
 }
