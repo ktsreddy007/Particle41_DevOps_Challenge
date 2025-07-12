@@ -102,7 +102,7 @@ PARTICLE41_DEVOPS_CHALLENGE/
 - Docker installed (`28.2.2`) for image builds
 - DockerHub account with public image published
 - Azure Cloud Account (Free Subscription Needed)
-- Azure Resources we create (Service Principal Id,Resource Group ,Az Public Subnet, Az Private Subnet ,Az Container App)
+- Azure Resources we create (Service Principal Id,Resource Group ,Az Public Subnet, Az Private Subnet ,Az Container App Environment,Az Container App)
 ### 🧪 Build and Push Docker Image
 
 ```bash
@@ -144,10 +144,17 @@ Terraform will create:
 - `kubernetes` load balancer (default from AKS infra)
 - `aks-agentpool-*` NSG (auto-generated)
 
+Note : Although this project does not provision AKS (Azure Kubernetes Service) explicitly, some Kubernetes-related resources such as a Load Balancer, NSGs for agent pools, and a managed resource group (MC_*) may appear in your Azure subscription.
+
+This is expected behavior when using:
+Azure Container Apps (ACA) with VNET integration
+A dedicated Container App Environment (non-Consumption SKU)
+
 ## Screenshots of expected resources to be present.
 ![Architecture](images/1.png)
 ![Architecture](images/2.png)
 ![Architecture](images/3.png)
+![Architecture](images/4.png)
 ---
 
 ## 🧪 Validation in bash or on website
