@@ -127,7 +127,7 @@ az provider register --namespace Microsoft.ManagedIdentity
 az provider register --namespace Microsoft.Monitor
 az provider register --namespace Microsoft.Web
 ```
-5. Check whether registered or not
+5. Check the status of registered resource provider
 ```bash
 az provider show --namespace Microsoft.App --query "registrationState"
 ```
@@ -135,8 +135,9 @@ az provider show --namespace Microsoft.App --query "registrationState"
 6. 🔧 Build & Push Image to Docker Hub
 ```bash
 cd SimpleTimeService_app
-docker build -t ktsreddy/teja_particle41_devops-challenge:v1.0 .
-docker push ktsreddy/teja_particle41_devops-challenge:v1.0
+docker build -t simpletimeservice .      # Building 1st locally with no custom tag
+docker tag simpletimeservice ktsreddy/teja_particle41_devops-challenge:v1.0  #tag the localdocker image with dockerhubrepo:v1.0
+docker push ktsreddy/teja_particle41_devops-challenge:v1.0       # Pushing the tagged image to the remote dockerhub repo 
 ```
 ### ⬇️ Pull the docker image to your local (Optional)
 ```bash
