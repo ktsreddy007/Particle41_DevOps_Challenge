@@ -140,12 +140,13 @@ Note : `Although this project does not provision AKS (Azure Kubernetes Service) 
   <img src="images/Internal_networkflow.png" alt="Network Structure" width="320" style="margin:10px;"/>
 </p>
 ---
+
 ## 🧪 Validation via shell or on website
 
 ```bash
 curl https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/
 ```
-Expected output:
+# Expected output:
 ![Architecture](images/Final_output.png)
 ---
 ## 📌 Notes
