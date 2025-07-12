@@ -21,7 +21,6 @@ resource "azurerm_container_app" "this" {
     external_enabled = true
     target_port      = var.container_port
     transport        = "auto"
-
     traffic_weight {
       percentage      = 100
       latest_revision = true
@@ -34,9 +33,9 @@ resource "azurerm_container_app" "this" {
       image  = var.container_image
       cpu    = 0.5
       memory = "1.0Gi"
-    }
+    }    
   }
-
+  
   tags = {
     environment = "dev"
   }
