@@ -15,6 +15,7 @@ The service is:
 - Published to **DockerHub**: `ktsreddy/teja_particle41_devops-challenge:v1.0`
 - Deployed to **Azure Container Apps** using **Terraform**
 - Integrated with a private subnet in a **modular VNet** setup
+
 ---
 
 ## 🌐 Example Application URL will be as below might be different for u based on the configurations we set in azure.
@@ -134,11 +135,13 @@ Note : `Although this project does not provision AKS (Azure Kubernetes Service) 
 -`This is expected behavior when using:`
 -`Azure Container Apps (ACA) with VNET integration`
 -`A dedicated Container App Environment`
+
 ## Screenshots of expected resources to be present.
 <p float="center">
   <img src="images/az_resources.png" alt="Azure Resources" width="320" style="margin:10px;"/>
   <img src="images/Internal_networkflow.png" alt="Network Structure" width="320" style="margin:10px;"/>
 </p>
+
 ---
 
 ## 🧪 Validation via shell or on website
