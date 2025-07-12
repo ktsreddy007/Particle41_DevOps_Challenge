@@ -97,7 +97,7 @@ PARTICLE41_DEVOPS_CHALLENGE/
 
 ### 🛠️ Prerequisites
 
-- Azure CLI authenticated (`az login`)
+- Azure CLI for authenticating (`az login`) & for creating (`ServicePricipal`,`ResourceProviders`)
 - Terraform installed (`>=1.3`)
 - Docker installed (`28.2.2`) for image builds
 - DockerHub account with public image published
