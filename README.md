@@ -13,7 +13,7 @@ DevOps Engineer | Cloud Enthusiast
 
 ### Key Features
 - Containerized using Docker with a **non-root user**
-- Image published to **DockerHub**: `ktsreddy/teja_particle41_devops-challenge:v1.0`
+- Image hosted on **DockerHub**: [`ktsreddy/teja_particle41_devops-challenge:v1.0`](https://hub.docker.com/r/ktsreddy/teja_particle41_devops-challenge)
 - Deployed to **Azure Container Apps** via **modular Terraform**
 - Integrated with a private subnet inside a **custom VNet**
 
@@ -45,7 +45,7 @@ DevOps Engineer | Cloud Enthusiast
 | Cloud Provider    | Microsoft Azure                                 |
 | Deployment        | Azure Container Apps                            |
 | Infra-as-Code     | Terraform (modular architecture)                |
-| Container Registry| Docker Hub (`ktsreddy/teja_particle41_devops-challenge:v1.0`) |
+| Container Registry| Docker Hub                                      |
 
 ---
 
@@ -53,7 +53,7 @@ DevOps Engineer | Cloud Enthusiast
 
 ```
 PARTICLE41_DEVOPS_CHALLENGE/
-├── SimpleTimeService_app/
+├── SimpleTimeService_app/                               # C# Source Code
 │   ├── bin/
 │   ├── obj/
 │   ├── Controllers/
@@ -67,8 +67,8 @@ PARTICLE41_DEVOPS_CHALLENGE/
 │   ├── SimpleTimeService.csproj
 │   ├── SimpleTimeService.http
 │   └── SimpleTimeService.sln
-├── terraform/
-│   ├── env/
+├── terraform/                                           # Terraform IaC setup
+│   ├── env/                                   # Environment-specific configs & root module
 │   │   └── dev/
 │   │       ├── .terraform/
 │   │       ├── .env
@@ -79,32 +79,51 @@ PARTICLE41_DEVOPS_CHALLENGE/
 │   │       ├── terraform.tfvars
 │   │       ├── terraform.tfvars.example
 │   │       └── variables.tf
-│   ├── modules/
+│   ├── modules/                                        # Reusable modules
 │   │   ├── container_app/
 │   │   ├── network/
 │   │   └── resource_group/
 │   └── .gitignore
 ├── Particle41_DevOps_Challenge.sln
+├── images                                        # Architecture & output screenshots
 └── README.md
 ```
 ---
 ## 🚀 Deployment Guide
 
 ### 🛠️ Prerequisites
-- Azure CLI for authenticating (`az login`) & for creating (`ServicePricipal`,`ResourceProviders`)
-- Terraform installed (`>=1.3`)
-- Docker installed (`28.2.2`) for image builds
-- DockerHub account with `public repo` where image published
-- Azure Cloud Account (`Free Subscription Needed`)
-- Azure Resources we create (`Service Principal Id`,`Resource Group`,`Az Public Subnet`,`Az Private Subnet`,`Az Container App Environment`,`Az Container App`)
-### 🐳 Build and Push Docker Image
+| Tool              | Purpose                         | Install Link                                                                       |
+| ----------------- | ------------------------------- | ---------------------------------------------------------------------------------- |
+| **Azure CLI**     | Login, create service principal | [Install Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) |
+| **Terraform**     | Provision cloud infrastructure  | [Install Terraform](https://developer.hashicorp.com/terraform/downloads)           |
+| **Docker**        | Build/push container image      | [Install Docker](https://docs.docker.com/get-docker/)                              |
+| **Azure Account** | Required to provision resources | [Azure Free Tier](https://azure.microsoft.com/en-in/free/)                         |
 
+### 🔐 Authentication & Azure Credentials
+1. Login to Azure CLI:
 ```bash
+az login
+```
+2. Create Service Principal for Terraform:
+```bash
+az ad sp create-for-rbac --name "Your_sp_name" --role="Contributor" --scopes="/subscriptions/<your-subscription-id>" --sdk-auth
+```
+3. Get below details and save in .env file :
+```bash
+ARM_CLIENT_ID=<appId>
+ARM_CLIENT_SECRET=<password>
+ARM_SUBSCRIPTION_ID=<subscriptionId>
+ARM_TENANT_ID=<tenant>
+```
+### 🐳 Docker Image
+4. 🔧 Build & Push Image to Docker Hub
+```bash
+cd SimpleTimeService_app
 docker build -t ktsreddy/teja_particle41_devops-challenge:v1.0 .
 docker push ktsreddy/teja_particle41_devops-challenge:v1.0
 ```
-### To Pull the image from docker hub registry to your local (Optional)
-```
+### ⬇️ Pull the docker image to your local (Optional)
+```bash
 docker pull ktsreddy/teja_particle41_devops-challenge:v1.0
 ```
 ### ☁️ Deploying Infrastructure via Terraform to Azure Cloud
@@ -154,6 +173,7 @@ Expected output:
 ![Architecture](images/Final_output.png)
 
 ---
+
 ## 📌 Notes
 - The Container App uses **built-in ingress** to expose the service publicly.So we didnt setup additional API Gateway.
 - The infrastructure adheres to **best practices** including use of:
