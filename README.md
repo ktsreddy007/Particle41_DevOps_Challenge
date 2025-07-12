@@ -150,10 +150,10 @@ Note : `Although this project does not provision AKS (Azure Kubernetes Service) 
 -`A dedicated Container App Environment`
 
 ## Screenshots of expected resources to be present.
-<p float="left">
-  <img src="images/az_resources.png" alt="Azure Resources" width="320" style="margin:10px; />
-  <img src="images/Internal_networkflow.png" alt="Network Structure" width="320" style="margin:10px; />
-  <img src="images/container-app-flow.png" alt="Container App Flow" width="320" style="margin:10px; />
+<p float="center">
+  <img src="images/az_resources.png" alt="Azure Resources" width="320" style="margin:10px;"/>
+  <img src="images/Internal_networkflow.png" alt="Network Structure" width="320" style="margin:10px;"/>
+  <img src="images/container-app-flow.png" alt="Container App Flow" width="320" style="margin:10px;"/>
 </p>
 
 ---
