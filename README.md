@@ -164,8 +164,12 @@ Note : `You may see AKS-related resources like load balancers, NSGs automaticall
 
 ## Screenshots
 <p float="center">
-  <img src="images/az_resources.png" alt="Azure Resources" width="320" style="margin:10px;"/>
-  <img src="images/Internal_networkflow.png" alt="Network Structure" width="320" style="margin:10px;"/>
+  <img src="images/az_resources.png" alt="Azure Resources" width="320" style="margin:10px;"/><br/>
+  <strong>Azure_Resources</strong>These are provisioned resources we will see once terraform has deployed<br/><br/>
+  <img src="images/networkflow.png" alt="Network Structure" width="320" style="margin:10px;"/>
+  <strong>Azure_Resources</strong>This is the interal network arcitecture how the ACA works with default K8 loadbalancer and NSG's<br/>
+  <img src="images/ACA_Output.png" alt="ACA Log" width="320" style="margin:10px;"/>
+  <strong>ACA Log</strong>It shows that our container is pulled and runnng successfully in ACA Log on Azure<br/>
 </p>
 
 ---
@@ -194,3 +198,15 @@ curl https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps
 - ✅ **Ingress HTTPS automatically enabled (Azure-managed)** via Azure
 - ✅ **IP address masking** if needed can be applied using Application Gateway or header filtering (didn't implemented)
 ---
+---
+
+## 📚 Additional Resources
+
+- [Azure Container Apps Documentation](https://learn.microsoft.com/en-us/azure/container-apps/)
+- [Terraform Azure Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
+
+---
+
+## 📬 Questions?
+Feel free to reach out:  
+📧 **ktsreddy007@gmail.com**
