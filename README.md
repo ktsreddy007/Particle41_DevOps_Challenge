@@ -1,5 +1,5 @@
 
-# ✅ SimpleTimeService Deployment Documentation
+# ✅ SimpleTimeService Serverless Deployment Documentation
 
 ## 👨‍💻 Author
 **Teja Surendar Reddy**  
@@ -39,9 +39,10 @@ DevOps Engineer | Cloud Enthusiast
 | Layer             | Technology                                      |
 |------------------|--------------------------------------------------|
 | Language          | C# (.NET 8)                                     |
+| Architecture Pattern | Microservice                                 |
 | Containerization  | Docker (multi-stage, non-root)                  |
 | Cloud Provider    | Microsoft Azure                                 |
-| Deployment        | Azure Container Apps                            |
+| Deployment        | Azure Container Apps (Serverless)               |
 | Infra-as-Code     | Terraform (modular architecture)                |
 | Container Registry| Docker Hub                                      |
 
@@ -114,8 +115,24 @@ ARM_CLIENT_SECRET=<password>
 ARM_SUBSCRIPTION_ID=<subscriptionId>
 ARM_TENANT_ID=<tenant>
 ```
+4. Register core resource providers at susbscription level in azure for Az Container apps
+```bash
+az provider register --namespace Microsoft.App
+az provider register --namespace Microsoft.OperationalInsights
+az provider register --namespace Microsoft.Insights
+az provider register --namespace Microsoft.Network
+az provider register --namespace Microsoft.ContainerRegistry
+az provider register --namespace Microsoft.Logz
+az provider register --namespace Microsoft.ManagedIdentity
+az provider register --namespace Microsoft.Monitor
+az provider register --namespace Microsoft.Web
+```
+5. Check whether registered or not
+```bash
+az provider show --namespace Microsoft.App --query "registrationState"
+```
 ### 🐳 Docker Image
-4. 🔧 Build & Push Image to Docker Hub
+6. 🔧 Build & Push Image to Docker Hub
 ```bash
 cd SimpleTimeService_app
 docker build -t ktsreddy/teja_particle41_devops-challenge:v1.0 .
@@ -126,17 +143,17 @@ docker push ktsreddy/teja_particle41_devops-challenge:v1.0
 docker pull ktsreddy/teja_particle41_devops-challenge:v1.0
 ```
 ### ☁️ Deploying Infrastructure via Terraform to Azure Cloud
-5. 📂Navigate to Terraform Environment Folder
+7. 📂Navigate to Terraform Environment Folder
 ```bash
 cd terraform/env/dev
 ```
-6. 🔄Configure Variables by editing terraform.tfvars or create a new file using:
+8. 🔄Configure Variables by editing terraform.tfvars or create a new file using:
 ```bash
 cp terraform.tfvars.example terraform.tfvars
 ```
 Note: `Update the values as per your Azure setup`(resource group, image name, subnet names, etc.).
 
-7. ⚙️Run Terraform Commands
+9. ⚙️Run Terraform Commands
 ```bash
 terraform init
 terraform validate
@@ -151,7 +168,7 @@ terraform apply tfplan or terraform apply
 - VNet integration (private subnet)
 
 ---
-## 📡 Infrastructure Overview
+## 📡Serverless Infrastructure Overview
 
 **Provisioned Azure Resources:**
 - `Tejarg` (Resource Group)
@@ -192,7 +209,8 @@ curl https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps
 - The infrastructure adheres to **best practices** including use of:
   - Implemented **`conditional startup with manual logging logic`** at application code level
   - Private subnet integration
-  - `Modular`, `reusable` Terraform code
+  - Its completely `serverless` 
+  - `Modular`, `reusable` Terraform code 
   - Secure `non-root Docker container`
 ---
 ## 🔒 Security Considerations
