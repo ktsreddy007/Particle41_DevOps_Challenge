@@ -160,18 +160,19 @@ terraform apply tfplan or terraform apply
 - `teja-aca` (Container App)
 - `kubernetes` load balancer (default from AKS infra via Az Container App)
 - `aks-agentpool-*` NSG (auto-generated)
+
 Note : `You may see AKS-related resources like load balancers, NSGs automatically generated. This is normal when using Azure Container Apps with VNet integration.`
 
 ## Screenshots
 <p float="center">
   <img src="images/az_resources.png" alt="Azure Resources" width="320" style="margin:10px;"/><br/>
-  <strong>Azure_Resources</strong>These are provisioned resources we will see once terraform has deployed<br/><br/>
+  <strong>Azure_Resources:</strong> These are provisioned resources we will see once terraform has deployed<br/><br/>
   
   <img src="images/networkflow.png" alt="Network Structure" width="320" style="margin:10px;"/><br/>
-  <strong>Azure_Resources</strong>This is the interal network arcitecture how the ACA works with default K8 loadbalancer and NSG's<br/><br/>
+  <strong>Azure_Resources:</strong> This is the interal network arcitecture how the ACA works with default K8 loadbalancer and NSG's<br/><br/>
   
   <img src="images/ACA_Output.png" alt="ACA Log" width="320" style="margin:10px;"/><br/>
-  <strong>ACA Log</strong>It shows that our container is pulled and runnng successfully in ACA Log on Azure.
+  <strong>ACA Log:</strong> It shows that our container is pulled and runnng successfully in ACA Log on Azure.
 </p>
 
 ---
