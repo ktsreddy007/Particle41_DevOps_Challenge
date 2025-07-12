@@ -19,6 +19,7 @@ namespace SimpleTimeService.Controllers
             TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(timeZoneId); 
             DateTime localTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, timeZoneInfo);
             var timestamp = localTime.ToString("yyyy-MM-dd HH:mm:ss");
+            Console.WriteLine($"Responding with timestamp: {timestamp}, IP: {ip}");
             return Ok(new { timestamp, ip });
         }
     }
