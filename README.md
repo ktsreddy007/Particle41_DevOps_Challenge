@@ -151,10 +151,11 @@ Note : `Although this project does not provision AKS (Azure Kubernetes Service) 
 
 ## Screenshots of expected resources to be present.
 <p float="left">
-  <img src="images/az_resources" alt="Azure Resources" width="300"/>
-  <img src="images/Internal_networkflow.png" alt="Network Structure" width="300"/>
-  <img src="images/container-app-flow.png" alt="Container App Flow" width="300"/>
+  <img src="images/az_resources.png" alt="Azure Resources" width="320" style="margin:10px; />
+  <img src="images/Internal_networkflow.png" alt="Network Structure" width="320" style="margin:10px; />
+  <img src="images/container-app-flow.png" alt="Container App Flow" width="320" style="margin:10px; />
 </p>
+
 ---
 
 ## 🧪 Validation via shell or on website
