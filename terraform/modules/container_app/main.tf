@@ -2,7 +2,7 @@ resource "azurerm_container_app_environment" "this" {
   name                         = "${var.prefix}-aca-env"
   location                     = var.location
   resource_group_name          = var.resource_group_name
-  infrastructure_subnet_id = var.subnet_id
+  infrastructure_subnet_id     = var.subnet_id
   internal_load_balancer_enabled = false
   zone_redundancy_enabled         = false
 

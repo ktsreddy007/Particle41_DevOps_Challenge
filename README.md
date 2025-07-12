@@ -11,18 +11,14 @@ DevOps Engineer | Cloud Enthusiast
 **SimpleTimeService** is a minimalist microservice developed in **C# (.NET 8)**. It returns the current timestamp (India Standard Time) and the IP address of the visitor in JSON format.
 
 The service is:
-
 - Containerized using Docker with a **non-root user**
 - Published to **DockerHub**: `ktsreddy/teja_particle41_devops-challenge:v1.0`
 - Deployed to **Azure Container Apps** using **Terraform**
 - Integrated with a private subnet in a **modular VNet** setup
-
 ---
 
 ## 🌐 Example Application URL will be as below might be different for u based on the configurations we set in azure.
-
 > [https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/](https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/)
-
 ---
 
 ## 📦 JSON Response Format / Output of the Service
@@ -30,10 +26,9 @@ The service is:
 ```json
 {
   "timestamp": "2025-07-12 15:00:00",
-  "ip": "xxx.xx.xx.xx"
+  "ip": "<visitor's IP address>"
 }
 ```
-
 ---
 
 ## 🧰 Technology Stack
