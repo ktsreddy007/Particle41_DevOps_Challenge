@@ -3,30 +3,34 @@
 
 ## 👨‍💻 Author
 **Teja Surendar Reddy**  
-DevOps Engineer | Cloud Enthusiast
-📧 Email: ktsreddy007@gmail.com.com  
+DevOps Engineer | Cloud Enthusiast  
+📧 Email: ktsreddy007@gmail.com
 
-## Overview
+---
+## 🧾 Overview
 
-**SimpleTimeService** is a minimalist microservice developed in **C# (.NET 8)**. It returns the current timestamp (India Standard Time) and the IP address of the visitor in JSON format.
+**SimpleTimeService** is a lightweight microservice built in **C# (.NET 8)** that returns the current timestamp (India Standard Time) and the visitor's IP address in JSON format.
 
-The service is:
+### Key Features
 - Containerized using Docker with a **non-root user**
-- Published to **DockerHub**: `ktsreddy/teja_particle41_devops-challenge:v1.0`
-- Deployed to **Azure Container Apps** using **Terraform**
-- Integrated with a private subnet in a **modular VNet** setup
+- Image published to **DockerHub**: `ktsreddy/teja_particle41_devops-challenge:v1.0`
+- Deployed to **Azure Container Apps** via **modular Terraform**
+- Integrated with a private subnet inside a **custom VNet**
 
 ---
 
-## 🌐 Example Application URL will be as below might be different for u based on the configurations we set in azure.
+## 🌍 Example Application URL
 > [https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/](https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/)
+>
+> _Note: The domain may vary depending on your Azure configuration._
+
 ---
 
-## 📦 JSON Response Format / Output of the Service
+## 📦 Sample JSON Response
 
 ```json
 {
-  "timestamp": "2025-07-12 15:00:00",
+  "timestamp": "<User current date & Time>",
   "ip": "<visitor's IP address>"
 }
 ```
@@ -84,7 +88,7 @@ PARTICLE41_DEVOPS_CHALLENGE/
 └── README.md
 ```
 ---
-## 🚀 How to Deploy (Terraform)
+## 🚀 Deployment Guide
 
 ### 🛠️ Prerequisites
 - Azure CLI for authenticating (`az login`) & for creating (`ServicePricipal`,`ResourceProviders`)
@@ -93,7 +97,7 @@ PARTICLE41_DEVOPS_CHALLENGE/
 - DockerHub account with `public repo` where image published
 - Azure Cloud Account (`Free Subscription Needed`)
 - Azure Resources we create (`Service Principal Id`,`Resource Group`,`Az Public Subnet`,`Az Private Subnet`,`Az Container App Environment`,`Az Container App`)
-### Build and Push 🐳Docker Image
+### 🐳 Build and Push Docker Image
 
 ```bash
 docker build -t ktsreddy/teja_particle41_devops-challenge:v1.0 .
@@ -114,16 +118,16 @@ terraform apply tfplan or terraform apply
 ```
 Note: All the values shown here are for example in your case u can use your own values
 
-Terraform will create:
-- A Resource Group `Tejarg`
-- A VNet `tejavnet` with 2 public & 2 private subnets
-- An Azure Container App Environment (`teja-aca-env`)
-- A Container App (`teja-aca`) integrated with private subnet
+Terraform provisions:
+- Resource Group:`Tejarg`
+- VNet: `tejavnet` with 2 public & 2 private subnets
+- Azure Container App Environment: `teja-aca-env`
+- Container App: `teja-aca` integrated with private subnet
 - Public ingress enabled via Azure-managed domain
 ---
-## 📷 Azure Resources Overview
+## 📡 Azure Infrastructure Overview
 
-**Created Resources:**
+**Provisioned Resources:**
 - `Tejarg` (Resource Group)
 - `tejavnet` (Virtual Network with 4 subnets(2 Private,2 Public))
 - `teja-aca-env` (Container App Environment)
@@ -131,12 +135,9 @@ Terraform will create:
 - `kubernetes` load balancer (default from AKS infra via Az Container App)
 - `aks-agentpool-*` NSG (auto-generated)
 
-Note : `Although this project does not provision AKS (Azure Kubernetes Service) explicitly, some Kubernetes-related resources such as a Load Balancer, NSGs for agent pools, and a managed resource group (MC_*) may appear in your Azure subscription.`
--`This is expected behavior when using:`
--`Azure Container Apps (ACA) with VNET integration`
--`A dedicated Container App Environment`
+Note : `You may see AKS-related resources like load balancers, NSGs automatically generated. This is normal when using Azure Container Apps with VNet integration.`
 
-## Screenshots of expected resources to be present.
+## Screenshots
 <p float="center">
   <img src="images/az_resources.png" alt="Azure Resources" width="320" style="margin:10px;"/>
   <img src="images/Internal_networkflow.png" alt="Network Structure" width="320" style="margin:10px;"/>
@@ -149,8 +150,9 @@ Note : `Although this project does not provision AKS (Azure Kubernetes Service) 
 ```bash
 curl https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/
 ```
-# Expected output:
+Expected output:
 ![Architecture](images/Final_output.png)
+
 ---
 ## 📌 Notes
 - The Container App uses **built-in ingress** to expose the service publicly.So we didnt setup additional API Gateway.
