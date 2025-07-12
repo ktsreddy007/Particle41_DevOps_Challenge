@@ -1,3 +1,20 @@
+# Build artifacts
 bin/
 obj/
+**/publish/
+
+# IDE and tooling
+.vscode/
+.idea/
+.vs/
+
+# User-specific files
+*.user
+*.suo
+
+# HTTP test files
 *.http
+
+# OS junk files
+.DS_Store
+Thumbs.db

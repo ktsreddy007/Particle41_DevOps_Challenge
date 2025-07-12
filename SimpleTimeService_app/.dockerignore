@@ -1,14 +1,17 @@
+# Ignore build artifacts
 bin/
 obj/
-*.md
-*.http
-*.git
-*.gitignore
-Dockerfile
-.dockerignore
+# Ignore local dev tools and test files
 .vscode/
 .idea/
 .vs/
+*.http
+# Ignore user/project metadata
+*.git
+*.gitignore
+# Ignore compiled binaries (in case accidentally left)
 *.exe
 *.dll
 *.pdb
+# Ignore development-only settings
+appsettings.Development.json
