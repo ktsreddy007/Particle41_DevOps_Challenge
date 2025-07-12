@@ -165,7 +165,7 @@ curl https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps
 ```
 
 Expected output:
-![Architecture](images/4.png)
+![Architecture](images/Final_output.png)
 ---
 
 ## 📌 Notes
