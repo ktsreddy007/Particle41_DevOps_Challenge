@@ -1,6 +1,0 @@
-@SimpleTimeService_HostAddress = http://localhost:5055
-
-GET {{SimpleTimeService_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

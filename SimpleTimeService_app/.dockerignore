@@ -1,6 +1,7 @@
 bin/
 obj/
 *.md
+*.http
 *.git
 *.gitignore
 Dockerfile
