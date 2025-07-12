@@ -134,14 +134,11 @@ Note : `Although this project does not provision AKS (Azure Kubernetes Service) 
 -`This is expected behavior when using:`
 -`Azure Container Apps (ACA) with VNET integration`
 -`A dedicated Container App Environment`
-
 ## Screenshots of expected resources to be present.
 <p float="center">
   <img src="images/az_resources.png" alt="Azure Resources" width="320" style="margin:10px;"/>
   <img src="images/Internal_networkflow.png" alt="Network Structure" width="320" style="margin:10px;"/>
-  <img src="images/container-app-flow.png" alt="Container App Flow" width="320" style="margin:10px;"/>
 </p>
-
 ---
 ## 🧪 Validation via shell or on website
 
