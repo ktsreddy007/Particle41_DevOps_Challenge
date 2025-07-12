@@ -140,37 +140,29 @@ Terraform will create:
 - `tejavnet` (Virtual Network with 4 subnets(2 Private,2 Public))
 - `teja-aca-env` (Container App Environment)
 - `teja-aca` (Container App)
-- 2 Public IPs
-- `kubernetes` load balancer (default from AKS infra)
+- `kubernetes` load balancer (default from AKS infra via Az Container App)
 - `aks-agentpool-*` NSG (auto-generated)
 
-Note : Although this project does not provision AKS (Azure Kubernetes Service) explicitly, some Kubernetes-related resources such as a Load Balancer, NSGs for agent pools, and a managed resource group (MC_*) may appear in your Azure subscription.
+`Note : Although this project does not provision AKS (Azure Kubernetes Service) explicitly, some Kubernetes-related resources such as a Load Balancer, NSGs for agent pools, and a managed resource group (MC_*) may appear in your Azure subscription.
 
-This is expected behavior when using:
-Azure Container Apps (ACA) with VNET integration
-A dedicated Container App Environment (non-Consumption SKU)
+-This is expected behavior when using:
+-Azure Container Apps (ACA) with VNET integration
+-A dedicated Container App Environment (non-Consumption SKU)`
 
 ## Screenshots of expected resources to be present.
 ![Architecture](images/1.png)
 ![Architecture](images/2.png)
 ![Architecture](images/3.png)
-![Architecture](images/4.png)
 ---
 
-## 🧪 Validation in bash or on website
+## 🧪 Validation via shell or on website
 
 ```bash
 curl https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/
 ```
 
 Expected output:
-```json
-{
-  "timestamp": "2025-07-12 15:00:00",
-  "ip": "x.x.x.x"
-}
-```
-
+![Architecture](images/4.png)
 ---
 
 ## 📌 Notes
@@ -188,5 +180,4 @@ Expected output:
 - **Non-root user** in Docker image (`USER myuser`)
 - **Ingress HTTPS auto-enabled** via Azure
 - **IP address masking** if needed can be applied using Application Gateway or header filtering (didn't implemented)
-
 ---
