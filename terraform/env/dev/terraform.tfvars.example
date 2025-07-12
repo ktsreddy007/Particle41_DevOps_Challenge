@@ -19,3 +19,18 @@ private_subnets = [
   { name = "private-subnet-2", address_prefix = "10.0.4.0/24" }
 ]
 
+# Container App Environment
+container_app_env_name = "teja-aca-env"
+
+# Container App
+container_app_name = "teja-aca"
+container_image    = "ktsreddy/teja_particle41_devops-challenge:v1.0"
+container_name     = "app"
+container_cpu      = 0.5
+container_memory   = "1.0Gi"
+container_port     = 5000
+
+# Container App Tags
+tags = {
+  environment = "dev"
+}
