@@ -30,7 +30,7 @@ The service is:
 ```json
 {
   "timestamp": "2025-07-12 15:00:00",
-  "ip": "123.45.67.89"
+  "ip": "xxx.xx.xx.xx"
 }
 ```
 
@@ -146,9 +146,11 @@ Terraform will create:
 
 ## Screenshots of expected resources to be present.
 ![Architecture](images/1.png)
+![Architecture](images/2.png)
+![Architecture](images/3.png)
 ---
 
-## 🧪 Testing
+## 🧪 Validation in bash or on website
 
 ```bash
 curl https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/
