@@ -28,17 +28,6 @@ else
 
 Console.WriteLine("Listening on http://0.0.0.0:5000");
 
-app.MapGet("/weatherforecast", () =>
-{
-    var summaries = new[] { "Freezing", "Chilly", "Mild", "Warm", "Hot" };
-    return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-    (
-        DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-        Random.Shared.Next(-20, 55),
-        summaries[Random.Shared.Next(summaries.Length)]
-    )).ToArray();
-});
-
 app.Use(async (context, next) =>
 {
     Console.WriteLine($"[DEBUG] Incoming request to: {context.Request.Path}");
@@ -47,9 +36,4 @@ app.Use(async (context, next) =>
 
 app.MapControllers();
 app.Run("http://0.0.0.0:5000");
-
 // Accessible at: http://localhost:5000/
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

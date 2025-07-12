@@ -37,16 +37,10 @@ E:\Particle41_DevOps_Challenge\SimpleTimeService_app\bin\Debug\net8.0\SimpleTime
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\bin\Debug\net8.0\SimpleTimeService.runtimeconfig.json
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\bin\Debug\net8.0\SimpleTimeService.dll
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\bin\Debug\net8.0\SimpleTimeService.pdb
-E:\Particle41_DevOps_Challenge\SimpleTimeService_app\bin\Debug\net8.0\Microsoft.OpenApi.dll
-E:\Particle41_DevOps_Challenge\SimpleTimeService_app\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-E:\Particle41_DevOps_Challenge\SimpleTimeService_app\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-E:\Particle41_DevOps_Challenge\SimpleTimeService_app\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.csproj.AssemblyReference.cache
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.GeneratedMSBuildEditorConfig.editorconfig
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.AssemblyInfoInputs.cache
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.AssemblyInfo.cs
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.csproj.CoreCompileInputs.cache
-E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.MvcApplicationPartsAssemblyInfo.cs
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.MvcApplicationPartsAssemblyInfo.cache
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.sourcelink.json
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\staticwebassets.build.json
@@ -57,7 +51,6 @@ E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\staticweba
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SimpleTimeService.props
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\staticwebassets.pack.json
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\scopedcss\bundle\SimpleTimeService.styles.css
-E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTi.3FAF11F5.Up2Date
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.dll
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\refint\SimpleTimeService.dll
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.pdb

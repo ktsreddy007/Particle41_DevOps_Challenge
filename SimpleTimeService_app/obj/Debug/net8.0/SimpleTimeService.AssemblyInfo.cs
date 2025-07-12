@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SimpleTimeService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56db8748ad8a76170d9e9e91bd5295af68214dcb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28787c472cfa5f4462baa1e32c2a6f45cba7ea8a")]
 [assembly: System.Reflection.AssemblyProductAttribute("SimpleTimeService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SimpleTimeService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
