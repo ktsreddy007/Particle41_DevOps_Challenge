@@ -127,33 +127,39 @@ docker push ktsreddy/teja_particle41_devops-challenge:v1.0
 docker pull ktsreddy/teja_particle41_devops-challenge:v1.0
 ```
 ### ☁️ Deploying Infrastructure via Terraform to Azure Cloud
-
+5. 📂Navigate to Terraform Environment Folder
 ```bash
 cd terraform/env/dev
+```
+6. 🔄Configure Variables by editing terraform.tfvars or create a new file using:
+```bash
+cp terraform.tfvars.example terraform.tfvars
+```
+Note: `Update the values as per your Azure setup (resource group, image name, subnet names, etc.)`
+7. ⚙️Run Terraform Commands
+```bash
 terraform init
-terraform plan -out=tfplan or terraform plan
 terraform validate
+terraform plan -out=tfplan or terraform plan
 terraform apply tfplan or terraform apply
 ```
-Note: All the values shown here are for example in your case u can use your own values
+✅ This will provision:
+- Resource Group: Tejarg
+- VNet with 2 public & 2 private subnets
+- Azure Container App Environment: teja-aca-env
+- Container App: teja-aca (with public ingress)
+- VNet integration (private subnet)
 
-Terraform provisions:
-- Resource Group:`Tejarg`
-- VNet: `tejavnet` with 2 public & 2 private subnets
-- Azure Container App Environment: `teja-aca-env`
-- Container App: `teja-aca` integrated with private subnet
-- Public ingress enabled via Azure-managed domain
 ---
-## 📡 Azure Infrastructure Overview
+## 📡 Infrastructure Overview
 
-**Provisioned Resources:**
+**Provisioned Azure Resources:**
 - `Tejarg` (Resource Group)
 - `tejavnet` (Virtual Network with 4 subnets(2 Private,2 Public))
 - `teja-aca-env` (Container App Environment)
 - `teja-aca` (Container App)
 - `kubernetes` load balancer (default from AKS infra via Az Container App)
 - `aks-agentpool-*` NSG (auto-generated)
-
 Note : `You may see AKS-related resources like load balancers, NSGs automatically generated. This is normal when using Azure Container Apps with VNet integration.`
 
 ## Screenshots
@@ -164,13 +170,13 @@ Note : `You may see AKS-related resources like load balancers, NSGs automaticall
 
 ---
 
-## 🧪 Validation via shell or on website
+## 🧪 Validate the Deployment
 
 ```bash
 curl https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/
 ```
 Expected output:
-![Architecture](images/Final_output.png)
+ <img src="images/Final_output.png" alt="Network Structure"/>
 
 ---
 
@@ -184,7 +190,7 @@ Expected output:
 ---
 ## 🔒 Security Considerations
 
-- **Non-root user** in Docker image (`USER myuser`)
-- **Ingress HTTPS auto-enabled** via Azure
+- ✅ Docker image runs as **non-root user (`USER myuser`)**
+- ✅ **Ingress HTTPS automatically enabled (Azure-managed)** via Azure
 - **IP address masking** if needed can be applied using Application Gateway or header filtering (didn't implemented)
 ---
