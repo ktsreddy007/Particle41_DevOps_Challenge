@@ -119,8 +119,9 @@ docker pull ktsreddy/teja_particle41_devops-challenge:v1.0
 ```bash
 cd terraform/env/dev
 terraform init
-terraform plan -out=tfplan
-terraform apply tfplan
+terraform plan -out=tfplan or terraform plan
+terraform validate
+terraform apply tfplan or terraform apply
 ```
 Note: All the values shown here are for example in your case u can use your own values
 
@@ -143,16 +144,17 @@ Terraform will create:
 - `kubernetes` load balancer (default from AKS infra via Az Container App)
 - `aks-agentpool-*` NSG (auto-generated)
 
-`Note : Although this project does not provision AKS (Azure Kubernetes Service) explicitly, some Kubernetes-related resources such as a Load Balancer, NSGs for agent pools, and a managed resource group (MC_*) may appear in your Azure subscription.
-
--This is expected behavior when using:
--Azure Container Apps (ACA) with VNET integration
--A dedicated Container App Environment (non-Consumption SKU)`
+Note : `Although this project does not provision AKS (Azure Kubernetes Service) explicitly, some Kubernetes-related resources such as a Load Balancer, NSGs for agent pools, and a managed resource group (MC_*) may appear in your Azure subscription.`
+-`This is expected behavior when using:`
+-`Azure Container Apps (ACA) with VNET integration`
+-`A dedicated Container App Environment`
 
 ## Screenshots of expected resources to be present.
-![Architecture](images/1.png)
-![Architecture](images/2.png)
-![Architecture](images/3.png)
+<p float="left">
+  <img src="images/az_resources" alt="Azure Resources" width="300"/>
+  <img src="images/Internal_networkflow.png" alt="Network Structure" width="300"/>
+  <img src="images/container-app-flow.png" alt="Container App Flow" width="300"/>
+</p>
 ---
 
 ## 🧪 Validation via shell or on website
