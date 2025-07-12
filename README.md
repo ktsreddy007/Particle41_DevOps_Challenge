@@ -16,13 +16,11 @@ DevOps Engineer | Cloud Enthusiast
 - Image hosted on **DockerHub**: [`ktsreddy/teja_particle41_devops-challenge:v1.0`](https://hub.docker.com/r/ktsreddy/teja_particle41_devops-challenge)
 - Deployed to **Azure Container Apps** via **modular Terraform**
 - Integrated with a private subnet inside a **custom VNet**
-
 ---
 
 ## 🌍 Example Application URL
-> [https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/](https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/)
->
-> _Note: The domain may vary depending on your Azure configuration._
+[https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/](https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/)
+`Note: The domain may vary depending on your Azure configuration.`
 
 ---
 
@@ -69,7 +67,7 @@ PARTICLE41_DEVOPS_CHALLENGE/
 │   └── SimpleTimeService.sln
 ├── terraform/                                           # Terraform IaC setup
 │   ├── env/                                   # Environment-specific configs & root module
-│   │   └── dev/
+│   │   └── dev/                                # Execute your terraform commands from here
 │   │       ├── .terraform/
 │   │       ├── .env
 │   │       ├── .env.template
@@ -96,7 +94,8 @@ PARTICLE41_DEVOPS_CHALLENGE/
 | ----------------- | ------------------------------- | ---------------------------------------------------------------------------------- |
 | **Azure CLI**     | Login, create service principal | [Install Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) |
 | **Terraform**     | Provision cloud infrastructure  | [Install Terraform](https://developer.hashicorp.com/terraform/downloads)           |
-| **Docker**        | Build/push container image      | [Install Docker](https://docs.docker.com/get-docker/)                              |
+| **Docker**        | Build container image           | [Install Docker](https://docs.docker.com/get-docker/)                                   |
+| **DockerHub**     | Push cotainer image             | [Login into DockerHub](https://hub.docker.com/)                                           |
 | **Azure Account** | Required to provision resources | [Azure Free Tier](https://azure.microsoft.com/en-in/free/)                         |
 
 ### 🔐 Authentication & Azure Credentials
@@ -135,7 +134,8 @@ cd terraform/env/dev
 ```bash
 cp terraform.tfvars.example terraform.tfvars
 ```
-Note: `Update the values as per your Azure setup (resource group, image name, subnet names, etc.)`
+Note: `Update the values as per your Azure setup`(resource group, image name, subnet names, etc.).
+
 7. ⚙️Run Terraform Commands
 ```bash
 terraform init
