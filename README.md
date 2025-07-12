@@ -17,9 +17,9 @@ DevOps Engineer | Cloud Enthusiast
 - Deployed to **Azure Container Apps** via **modular Terraform**
 - Integrated with a private subnet inside a **custom VNet**
 ---
-
 ## 🌍 Example Application URL
 [https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/](https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/)
+
 `Note: The domain may vary depending on your Azure configuration.`
 
 ---
@@ -175,7 +175,7 @@ Note : `You may see AKS-related resources like load balancers, NSGs automaticall
 ```bash
 curl https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/
 ```
-Expected output:
+> **Expected output:**
  <img src="images/Final_output.png" alt="Network Structure"/>
 
 ---
@@ -183,14 +183,14 @@ Expected output:
 ## 📌 Notes
 - The Container App uses **built-in ingress** to expose the service publicly.So we didnt setup additional API Gateway.
 - The infrastructure adheres to **best practices** including use of:
-  - Implemented conditional startup with manual logging logic at application code level
+  - Implemented **`conditional startup with manual logging logic`** at application code level
   - Private subnet integration
-  - Modular, reusable Terraform code
-  - Secure non-root Docker container
+  - `Modular`, `reusable` Terraform code
+  - Secure `non-root Docker container`
 ---
 ## 🔒 Security Considerations
 
 - ✅ Docker image runs as **non-root user (`USER myuser`)**
 - ✅ **Ingress HTTPS automatically enabled (Azure-managed)** via Azure
-- **IP address masking** if needed can be applied using Application Gateway or header filtering (didn't implemented)
+- ✅ **IP address masking** if needed can be applied using Application Gateway or header filtering (didn't implemented)
 ---
