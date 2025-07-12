@@ -57,7 +57,6 @@ PARTICLE41_DEVOPS_CHALLENGE/
 │   ├── .dockerignore
 │   ├── appsettings.Development.json
 │   ├── appsettings.json
-│   ├── docker-compose.yml
 │   ├── Dockerfile
 │   ├── Program.cs
 │   ├── SimpleTimeService.csproj
@@ -71,8 +70,6 @@ PARTICLE41_DEVOPS_CHALLENGE/
 │   │       ├── .env.template
 │   │       ├── main.tf
 │   │       ├── outputs.tf
-│   │       ├── plan.json
-│   │       ├── plan.out
 │   │       ├── terraform.tfstate
 │   │       ├── terraform.tfvars
 │   │       ├── terraform.tfvars.example
@@ -161,7 +158,6 @@ Expected output:
   - Modular, reusable Terraform code
   - Secure non-root Docker container
 ---
-
 ## 🔒 Security Considerations
 
 - **Non-root user** in Docker image (`USER myuser`)
