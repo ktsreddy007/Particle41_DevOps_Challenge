@@ -85,20 +85,17 @@ PARTICLE41_DEVOPS_CHALLENGE/
 ├── Particle41_DevOps_Challenge.sln
 └── README.md
 ```
-
 ---
-
 ## 🚀 How to Deploy (Terraform)
 
 ### 🛠️ Prerequisites
-
 - Azure CLI for authenticating (`az login`) & for creating (`ServicePricipal`,`ResourceProviders`)
 - Terraform installed (`>=1.3`)
 - Docker installed (`28.2.2`) for image builds
 - DockerHub account with public image published
-- Azure Cloud Account (Free Subscription Needed)
-- Azure Resources we create (Service Principal Id,Resource Group ,Az Public Subnet, Az Private Subnet ,Az Container App Environment,Az Container App)
-### 🧪 Build and Push Docker Image
+- Azure Cloud Account (`Free Subscription Needed`)
+- Azure Resources we create (`Service Principal Id`,`Resource Group`,`Az Public Subnet`,`Az Private Subnet`,`Az Container App Environment`,`Az Container App`)
+### 🐳 Build and Push Docker Image
 
 ```bash
 docker build -t ktsreddy/teja_particle41_devops-challenge:v1.0 .
@@ -108,7 +105,6 @@ docker push ktsreddy/teja_particle41_devops-challenge:v1.0
 ```
 docker pull ktsreddy/teja_particle41_devops-challenge:v1.0
 ```
-
 ### ☁️ Deploying Infrastructure via Terraform to Azure Cloud
 
 ```bash
@@ -126,9 +122,7 @@ Terraform will create:
 - An Azure Container App Environment (`teja-aca-env`)
 - A Container App (`teja-aca`) integrated with private subnet
 - Public ingress enabled via Azure-managed domain
-
 ---
-
 ## 📷 Azure Resources Overview
 
 **Created Resources:**
@@ -152,25 +146,20 @@ Note : `Although this project does not provision AKS (Azure Kubernetes Service) 
 </p>
 
 ---
-
 ## 🧪 Validation via shell or on website
 
 ```bash
 curl https://teja-aca--z3o5mig.purplemoss-d4634061.southindia.azurecontainerapps.io/
 ```
-
 Expected output:
 ![Architecture](images/Final_output.png)
 ---
-
 ## 📌 Notes
-
 - The Container App uses **built-in ingress** to expose the service publicly. No additional API Gateway is needed.
 - The infrastructure adheres to **best practices** including use of:
   - Private subnet integration
   - Modular, reusable Terraform code
   - Secure non-root Docker container
-
 ---
 
 ## 🔒 Security Considerations
