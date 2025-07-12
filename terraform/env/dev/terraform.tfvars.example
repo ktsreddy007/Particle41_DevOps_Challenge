@@ -1,36 +1,25 @@
-# Azure Resource Group name and location
-resource_group_name     = "REPLACE_ME_RG_NAME"
-resource_group_location = "South India"
-location                = "South India"
+# Resource Group
+resource_group_name     = "<your-resource-group-name>"
+resource_group_location = "<your-location>" # e.g., "South India"
+location                = "<your-location>" # e.g., "South India"
 
 # Virtual Network
-vnet_name     = "REPLACE_ME_VNET_NAME"
-address_space = ["10.0.0.0/16"]
+vnet_name     = "<your-vnet-name>"
+address_space = ["<your-vnet-cidr>"] # e.g., ["10.0.0.0/16"]
 
 # Public Subnets
 public_subnets = [
-  { name = "public-subnet-1", address_prefix = "10.0.1.0/24" },
-  { name = "public-subnet-2", address_prefix = "10.0.2.0/24" }
+  { name = "<public-subnet-1-name>", address_prefix = "<cidr>" }, # e.g., "10.0.0.0/24"
+  { name = "<public-subnet-2-name>", address_prefix = "<cidr>" }  # e.g., "10.0.1.0/24"
 ]
 
 # Private Subnets
 private_subnets = [
-  { name = "private-subnet-1", address_prefix = "10.0.3.0/24" },
-  { name = "private-subnet-2", address_prefix = "10.0.4.0/24" }
+  { name = "<private-subnet-1-name>", address_prefix = "<cidr>" }, # e.g., "10.0.2.0/23"
+  { name = "<private-subnet-2-name>", address_prefix = "<cidr>" }  # e.g., "10.0.4.0/24"
 ]
 
-# Container App Environment
-container_app_env_name = "teja-aca-env"
-
 # Container App
-container_app_name = "teja-aca"
-container_image    = "ktsreddy/teja_particle41_devops-challenge:v1.0"
-container_name     = "app"
-container_cpu      = 0.5
-container_memory   = "1.0Gi"
-container_port     = 5000
-
-# Container App Tags
-tags = {
-  environment = "dev"
-}
+prefix           = "<prefix-for-naming>" # e.g., "teja"
+container_image  = "ktsreddy/teja_particle41_devops-challenge:v1.0"   # e.g., "ktsreddy/your-image:tag"
+container_port   = 5000         # e.g., 5000

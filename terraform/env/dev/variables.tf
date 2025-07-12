@@ -37,10 +37,13 @@ variable "private_subnets" {
 
 variable "prefix" {
   type = string
+  description = "Prefix for naming resources"
 }
 variable "container_image" {
-  type = string
+  type        = string
+  description = "Container image for deployment"
 }
 variable "container_port" {
-  type = number
+  type        = number
+  description = "Port on which container listens"
 }
