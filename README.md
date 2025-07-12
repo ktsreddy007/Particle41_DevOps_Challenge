@@ -89,10 +89,10 @@ PARTICLE41_DEVOPS_CHALLENGE/
 - Azure CLI for authenticating (`az login`) & for creating (`ServicePricipal`,`ResourceProviders`)
 - Terraform installed (`>=1.3`)
 - Docker installed (`28.2.2`) for image builds
-- DockerHub account with public image published
+- DockerHub account with `public repo` where image published
 - Azure Cloud Account (`Free Subscription Needed`)
 - Azure Resources we create (`Service Principal Id`,`Resource Group`,`Az Public Subnet`,`Az Private Subnet`,`Az Container App Environment`,`Az Container App`)
-### 🐳 Build and Push Docker Image
+### Build and Push 🐳Docker Image
 
 ```bash
 docker build -t ktsreddy/teja_particle41_devops-challenge:v1.0 .
@@ -152,8 +152,9 @@ Expected output:
 ![Architecture](images/Final_output.png)
 ---
 ## 📌 Notes
-- The Container App uses **built-in ingress** to expose the service publicly. No additional API Gateway is needed.
+- The Container App uses **built-in ingress** to expose the service publicly.So we didnt setup additional API Gateway.
 - The infrastructure adheres to **best practices** including use of:
+  - Implemented conditional startup with manual logging logic at application code level
   - Private subnet integration
   - Modular, reusable Terraform code
   - Secure non-root Docker container
