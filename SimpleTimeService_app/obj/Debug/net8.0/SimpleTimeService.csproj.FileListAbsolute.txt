@@ -48,6 +48,7 @@ E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTime
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.csproj.CoreCompileInputs.cache
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.MvcApplicationPartsAssemblyInfo.cs
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.MvcApplicationPartsAssemblyInfo.cache
+E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\SimpleTimeService.sourcelink.json
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\staticwebassets.build.json
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\staticwebassets.development.json
 E:\Particle41_DevOps_Challenge\SimpleTimeService_app\obj\Debug\net8.0\staticwebassets\msbuild.SimpleTimeService.Microsoft.AspNetCore.StaticWebAssets.props

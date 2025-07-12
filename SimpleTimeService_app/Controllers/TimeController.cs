@@ -5,11 +5,10 @@ using System.Runtime.InteropServices;
 
 namespace SimpleTimeService.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class TimeController : ControllerBase
     {
-        [HttpGet]
+        [HttpGet("/")]
         public IActionResult GetTime()
         {
             // Use null-conditional operator to avoid null dereference
@@ -20,13 +19,7 @@ namespace SimpleTimeService.Controllers
             TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(timeZoneId); 
             DateTime localTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, timeZoneInfo);
             var timestamp = localTime.ToString("yyyy-MM-dd HH:mm:ss");
-            var response = new
-            {
-                timestamp,
-                ip
-            };
-
-            return Ok(response);
+            return Ok(new { timestamp, ip });
         }
     }
 }
