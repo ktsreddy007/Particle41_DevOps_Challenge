@@ -3,6 +3,7 @@ crash.log
 *.tfplan
 *.log
 *.tfstate
+backend.tf
 *.tfstate.backup
 .terraform/
 terraform.tfvars
